@@ -5,7 +5,17 @@ import "CoreLibs/timer"
 
 local gfx <const> = playdate.graphics
 
-function playdate.update() 
-    gfx.clear()
-    gfx.drawText("Hello World", 20, 20)
+local playerSprite = nil
+
+local function initialize()
+    local playerImage = gfx.image.new("images/player")
+    playerSprite = gfx.sprite.new(playerImage)
+    playerSprite:moveTo(200, 120)
+    playerSprite:add()
+end
+
+initialize()
+
+function playdate.update()
+    gfx.sprite.update()
 end
