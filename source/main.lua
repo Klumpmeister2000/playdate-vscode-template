@@ -19,7 +19,7 @@ local function resetTimer()
     playTimer = playdate.timer.new(playTime, playTime, 0, playdate.easingFunctions.linear)
 end
 
-local function MoveCoin()
+local function moveCoin()
     local randX = math.random(40,360)
     local randY = math.random(40,200)
     coinSprite:moveTo(randX, randY)
@@ -81,7 +81,7 @@ function playdate.update()
 end
     
 playdate.timer.updateTimers()
-    gfx.sprite.update()
+gfx.sprite.update()
 
     gfx.drawText("Time:" .. math.ceil(playTimer.value/1000), 5, 5)
     gfx.drawText("Score:" .. score, 320, 5)
