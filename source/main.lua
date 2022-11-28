@@ -13,6 +13,7 @@ local playTimer = nil
 local playTime = 30 * 1000
 
 local coinSprite = nil
+local score = 0
 
 local function resetTimer()
     playTimer = playdate.timer.new(playTime, playTime, 0, playdate.easingFunctions.linear)
@@ -75,10 +76,13 @@ function playdate.update()
         local collisions = coinSprite:overlappingSprites()
         if #collisions >= 1 then
             moveCoin()
+            score += 1
+        end
 end
     
 playdate.timer.updateTimers()
     gfx.sprite.update()
 
     gfx.drawText("Time:" .. math.ceil(playTimer.value/1000), 5, 5)
+    gfx.drawText("Score:" .. score, 320, 5)
 end
