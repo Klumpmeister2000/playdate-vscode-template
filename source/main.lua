@@ -9,8 +9,8 @@ local gfx <const> = playdate.graphics
 
 local gridview = pd.ui.gridview.new(32,32)
 
-gridview:setNumberOfColumns(8)
-gridview:setNumberOfRows(6)
+gridview:setNumberOfColumns(3)
+gridview:setNumberOfRows(1)
 
 function pd.update()
     gridview:drawInRect(100, 70, 200, 100)
